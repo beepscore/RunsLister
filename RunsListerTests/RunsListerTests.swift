@@ -22,39 +22,33 @@ class RunsListerTests: XCTestCase {
         super.tearDown()
     }
 
-    func runsDescription(runs: [Run]) -> NSString {
-        var description = ""
-
-        for run in runs {
-            description += run.description
-        }
-        return description
-    }
-
     func testRuns() {
         let numbers = [1, -7, 2, 1, 3, 48, 0, 0, 4, 12, 14]
-        let expected = [Run(startIndex: 1, stopIndex: 2),
+        let expectedRunList = [Run(startIndex: 1, stopIndex: 2),
             Run(startIndex: 3, stopIndex: 5),
             Run(startIndex: 7, stopIndex: 10)]
-        let actual = RunsLister.runs(numbers)
-        println("expected \(self.runsDescription(expected))")
-        println("actual \(self.runsDescription(actual))")
+        let expected = Runs(list: expectedRunList)
+        let actual = RunsLister.listRuns(numbers)
         XCTAssertEqual(expected, actual,
-            "Expected \(expected.description) but got actual \(actual.description)")
+            "Expected \n \(expected.description) but got actual \n \(actual.description)")
     }
     
     func testRunsNumbersEmpty() {
         let numbers: [Int] = []
-        let expected: [Run] = []
-        let actual = RunsLister.runs(numbers)
-        XCTAssertEqual(expected, actual)
+        let expectedRunList: [Run] = []
+        let expected = Runs(list: expectedRunList)
+        let actual = RunsLister.listRuns(numbers)
+        XCTAssertEqual(expected, actual,
+            "Expected \n \(expected.description) but got actual \n \(actual.description)")
     }
 
     func testRunsNumbersLengthOne() {
         let numbers: [Int] = [3]
-        let expected: [Run] = []
-        let actual = RunsLister.runs(numbers)
-        XCTAssertEqual(expected, actual)
+        let expectedRunList: [Run] = []
+        let expected = Runs(list: expectedRunList)
+        let actual = RunsLister.listRuns(numbers)
+        XCTAssertEqual(expected, actual,
+            "Expected \n \(expected.description) but got actual \n \(actual.description)")
     }
 
 }

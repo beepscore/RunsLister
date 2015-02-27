@@ -10,19 +10,17 @@ import Foundation
 
 class RunsLister {
 
-    typealias Runs = [Run]
-
     // keyword "class" declares a type method, similar to a class method
-    class func runs(numbers: [Int]) -> Runs {
+    class func listRuns(numbers: [Int]) -> Runs {
 
         if (numbers.count < 2) {
             // array with no elements or 1 element can't contain a run
-            let emptyRuns : [Run] = []
-            return emptyRuns
+            return Runs(list: [])
         }
 
         // [1, -7, 2, 1, 3, 48, 0, 0, 4, 12, 14]
-        var runs : Runs = []
+        var runList: [Run] = []
+        var runs = Runs(list:runList)
         var startIndex = 0
         var stopIndex = 0
 
@@ -31,7 +29,7 @@ class RunsLister {
                 // we aren't in a run
                 stopIndex = index - 1
                 if (stopIndex > startIndex) {
-                    runs.append(Run(startIndex: startIndex, stopIndex: stopIndex))
+                    runs.list.append(Run(startIndex: startIndex, stopIndex: stopIndex))
                 }
                 startIndex = index
             } else {
@@ -39,7 +37,7 @@ class RunsLister {
                 if (numbers.count - 1) == index {
                     // we are at last element in array
                     stopIndex = index
-                    runs.append(Run(startIndex: startIndex, stopIndex: stopIndex))
+                    runs.list.append(Run(startIndex: startIndex, stopIndex: stopIndex))
                 }
             }
         }

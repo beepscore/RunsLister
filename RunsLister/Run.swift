@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Run : Equatable {
+class Run : Equatable, Printable, DebugPrintable {
 
     var startIndex: Int
     var stopIndex: Int
@@ -16,6 +16,14 @@ class Run : Equatable {
     init(startIndex: Int, stopIndex: Int) {
         self.startIndex = startIndex
         self.stopIndex = stopIndex
+    }
+
+    var description : String {
+        return "startIndex: \(self.startIndex) stopIndex: \(self.stopIndex)\n"
+    }
+
+    var debugDescription : String {
+        return self.description
     }
 
 }

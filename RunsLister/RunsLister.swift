@@ -20,8 +20,30 @@ class RunsLister {
             let emptyRuns : [Run] = []
             return emptyRuns
         }
+
+        // [1, -7, 2, 1, 3, 48, 0, 0, 4, 12, 14]
+        var runs : Runs = []
+        var startIndex = 0
+        var stopIndex = 0
+
+        for (var index = 1; index < numbers.count; index++) {
+            if numbers[index] <= numbers[index-1] {
+                // we aren't in a run
+                stopIndex = index - 1
+                if (stopIndex > startIndex) {
+                    runs.append(Run(startIndex: startIndex, stopIndex: stopIndex))
+                }
+                startIndex = index
+            } else {
+                // we are in a run
+                if (numbers.count - 1) == index {
+                    // we are at last element in array
+                    stopIndex = index
+                    runs.append(Run(startIndex: startIndex, stopIndex: stopIndex))
+                }
+            }
+        }
         
-        return [Run(startIndex: 1, stopIndex: 2),
-            Run(startIndex: 3, stopIndex: 5)]
+        return runs
     }
 }

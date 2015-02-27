@@ -21,13 +21,26 @@ class RunsListerTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-    
+
+    func runsDescription(runs: [Run]) -> NSString {
+        var description = ""
+
+        for run in runs {
+            description += run.description
+        }
+        return description
+    }
+
     func testRuns() {
         let numbers = [1, -7, 2, 1, 3, 48, 0, 0, 4, 12, 14]
         let expected = [Run(startIndex: 1, stopIndex: 2),
-            Run(startIndex: 3, stopIndex: 5)]
+            Run(startIndex: 3, stopIndex: 5),
+            Run(startIndex: 7, stopIndex: 10)]
         let actual = RunsLister.runs(numbers)
-        XCTAssertEqual(expected, actual)
+        println("expected \(self.runsDescription(expected))")
+        println("actual \(self.runsDescription(actual))")
+        XCTAssertEqual(expected, actual,
+            "Expected \(expected.description) but got actual \(actual.description)")
     }
     
     func testRunsNumbersEmpty() {

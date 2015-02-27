@@ -36,6 +36,7 @@
 		DE147B531A9FFE3300F74236 /* RunsListerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RunsListerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE147B581A9FFE3300F74236 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE147B591A9FFE3300F74236 /* RunsListerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunsListerTests.swift; sourceTree = "<group>"; };
+		DE3F98741A9FFFC200254B26 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +60,7 @@
 		DE147B351A9FFE3200F74236 = {
 			isa = PBXGroup;
 			children = (
+				DE3F98741A9FFFC200254B26 /* README.md */,
 				DE147B401A9FFE3200F74236 /* RunsLister */,
 				DE147B561A9FFE3300F74236 /* RunsListerTests */,
 				DE147B3F1A9FFE3200F74236 /* Products */,
@@ -407,6 +409,7 @@
 				DE147B5F1A9FFE3300F74236 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DE147B601A9FFE3300F74236 /* Build configuration list for PBXNativeTarget "RunsListerTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +418,7 @@
 				DE147B621A9FFE3300F74236 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

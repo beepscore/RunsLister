@@ -12,6 +12,6 @@ not greater than or equal to previous.
 
 Example
     source = [1, -7, 2, 1, 3, 48, 0, 0, 4, 12, 14]
-    runs = [(1, 2), (3, 5), (8, 10)]
+    runs = [(1, 2), (3, 5), (7, 10)]
 
 A Run can be a type that can hold two values such as a point, tuple, array.

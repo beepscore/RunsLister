@@ -15,3 +15,4 @@ Example
     runs = [(1, 2), (3, 5), (7, 10)]
 
 A Run can be a type that can hold two values such as a point, tuple, array.
+A Run can be a class that can hold two values as properties such as startIndex, stopIndex.

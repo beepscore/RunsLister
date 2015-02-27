@@ -30,4 +30,18 @@ class RunsListerTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
+    func testRunsNumbersEmpty() {
+        let numbers: [Int] = []
+        let expected: [Run] = []
+        let actual = RunsLister.runs(numbers)
+        XCTAssertEqual(expected, actual)
+    }
+
+    func testRunsNumbersLengthOne() {
+        let numbers: [Int] = [3]
+        let expected: [Run] = []
+        let actual = RunsLister.runs(numbers)
+        XCTAssertEqual(expected, actual)
+    }
+
 }

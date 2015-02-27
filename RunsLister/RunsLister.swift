@@ -14,6 +14,12 @@ class RunsLister {
 
     // keyword "class" declares a type method, similar to a class method
     class func runs(numbers: [Int]) -> Runs {
+
+        if (numbers.count < 2) {
+            // array with no elements or 1 element can't contain a run
+            let emptyRuns : [Run] = []
+            return emptyRuns
+        }
         
         return [Run(startIndex: 1, stopIndex: 2),
             Run(startIndex: 3, stopIndex: 5)]

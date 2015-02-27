@@ -8,6 +8,7 @@
 
 import UIKit
 import XCTest
+//import RunsLister
 
 class RunsListerTests: XCTestCase {
     
@@ -21,16 +22,12 @@ class RunsListerTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock() {
-            // Put the code you want to measure the time of here.
-        }
+    func testRuns() {
+        let numbers = [1, -7, 2, 1, 3, 48, 0, 0, 4, 12, 14]
+        let expected = [Run(startIndex: 1, stopIndex: 2),
+            Run(startIndex: 3, stopIndex: 5)]
+        let actual = RunsLister.runs(numbers)
+        XCTAssertEqual(expected, actual)
     }
     
 }

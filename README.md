@@ -16,3 +16,6 @@ Example
 
 A Run can be a type that can hold two values such as a point, tuple, array.
 A Run can be a class that can hold two values as properties such as startIndex, stopIndex.
+
+## Tests
+See tests for more info.

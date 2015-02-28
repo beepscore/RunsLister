@@ -46,6 +46,7 @@
 		DE67B4801AA0D87400743A17 /* Run.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Run.swift; sourceTree = "<group>"; };
 		DE67B4821AA0D8C700743A17 /* RunsLister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunsLister.swift; sourceTree = "<group>"; };
 		DE7D63911AA1042900296AAB /* Runs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Runs.swift; sourceTree = "<group>"; };
+		DE84B5E61AA261CB00EC0E11 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +70,7 @@
 		DE147B351A9FFE3200F74236 = {
 			isa = PBXGroup;
 			children = (
+				DE84B5E61AA261CB00EC0E11 /* LICENSE */,
 				DE3F98741A9FFFC200254B26 /* README.md */,
 				DE147B401A9FFE3200F74236 /* RunsLister */,
 				DE147B561A9FFE3300F74236 /* RunsListerTests */,

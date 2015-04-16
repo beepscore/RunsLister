@@ -8,8 +8,9 @@
 
 import Foundation
 
-// Swift array is a struct, not a class
-// Runs can't subclass array
+// Runs class uses composition to contain array of runs [Run]
+// Swift class can't subclass array, because array is a struct, not a class.
+// i.e. can't do this- 
 // class Runs : [Run] {
 
 class Runs : Equatable, Printable, DebugPrintable {

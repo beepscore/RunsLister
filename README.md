@@ -51,8 +51,8 @@ Then run length = (end index - start index) + 1
 #### index(of:)
 Python has an list.index() method that returns the index of the first matching element.
 Swift has similar index(of:).
-To solve by writing very little code, could get startIndex via indexOf(number).
-Get endIndex by reversing array, endIndex ~ array.count - reversed.indexOf(number).
+To solve by writing very little code, could get startIndex via index(of: number).
+Get endIndex by reversing array, endIndex ~ array.count - reversed.index(of: number).
 Note reversed() implementation may have been optimized, it might simply traverse backwards instead of rewriting.
 TODO: Check for off by 1 errors!
 

@@ -48,9 +48,12 @@ For start of run, check number and previous number or beginning of list.
 For end of run, check number and next number or end of list.
 Then run length = (end index - start index) + 1
 
-#### indexOf
-I think Python has an indexOf method that returns the index of the first matching element. Maybe Swift does too.
+#### index(of:)
+Python has an list.index() method that returns the index of the first matching element.
+Swift has similar index(of:).
 To solve by writing very little code, could get startIndex via indexOf(number).
-Get endIndex by reversing array, endIndex ~ array.count - reversed.indexOf(number). TODO: Check for off by 1 errors!
+Get endIndex by reversing array, endIndex ~ array.count - reversed.indexOf(number).
+Note reversed() implementation may have been optimized, it might simply traverse backwards instead of rewriting.
+TODO: Check for off by 1 errors!
 
 

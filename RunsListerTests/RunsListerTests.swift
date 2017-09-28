@@ -23,47 +23,47 @@ class RunsListerTests: XCTestCase {
     }
 
     func testisEndOfARun() {
-        XCTAssertFalse(RunsLister.isEndOfARun([2], index: 0))
-        XCTAssertFalse(RunsLister.isEndOfARun([2, 2], index: 0))
-        XCTAssertFalse(RunsLister.isEndOfARun([2, 2], index: 1))
+        XCTAssertFalse(RunsLister.isEndOfARun(numbers: [2], index: 0))
+        XCTAssertFalse(RunsLister.isEndOfARun(numbers: [2, 2], index: 0))
+        XCTAssertFalse(RunsLister.isEndOfARun(numbers: [2, 2], index: 1))
 
-        XCTAssertFalse(RunsLister.isEndOfARun([3, 5], index: 0))
-        XCTAssertTrue(RunsLister.isEndOfARun([3, 5], index: 1))
+        XCTAssertFalse(RunsLister.isEndOfARun(numbers: [3, 5], index: 0))
+        XCTAssertTrue(RunsLister.isEndOfARun(numbers: [3, 5], index: 1))
 
         let numbers = [1, -7, 2, 1, 3, 48, 0, 0, 4, 12, 14]
-        XCTAssertTrue(RunsLister.isEndOfARun(numbers, index: 2))
-        XCTAssertTrue(RunsLister.isEndOfARun(numbers, index: 5))
-        XCTAssertTrue(RunsLister.isEndOfARun(numbers, index: 10))
-        XCTAssertFalse(RunsLister.isEndOfARun(numbers, index: 0))
-        XCTAssertFalse(RunsLister.isEndOfARun(numbers, index: 1))
-        XCTAssertFalse(RunsLister.isEndOfARun(numbers, index: 3))
-        XCTAssertFalse(RunsLister.isEndOfARun(numbers, index: 4))
-        XCTAssertFalse(RunsLister.isEndOfARun(numbers, index: 6))
-        XCTAssertFalse(RunsLister.isEndOfARun(numbers, index: 7))
-        XCTAssertFalse(RunsLister.isEndOfARun(numbers, index: 8))
-        XCTAssertFalse(RunsLister.isEndOfARun(numbers, index: 9))
+        XCTAssertTrue(RunsLister.isEndOfARun(numbers: numbers, index: 2))
+        XCTAssertTrue(RunsLister.isEndOfARun(numbers: numbers, index: 5))
+        XCTAssertTrue(RunsLister.isEndOfARun(numbers: numbers, index: 10))
+        XCTAssertFalse(RunsLister.isEndOfARun(numbers: numbers, index: 0))
+        XCTAssertFalse(RunsLister.isEndOfARun(numbers: numbers, index: 1))
+        XCTAssertFalse(RunsLister.isEndOfARun(numbers: numbers, index: 3))
+        XCTAssertFalse(RunsLister.isEndOfARun(numbers: numbers, index: 4))
+        XCTAssertFalse(RunsLister.isEndOfARun(numbers: numbers, index: 6))
+        XCTAssertFalse(RunsLister.isEndOfARun(numbers: numbers, index: 7))
+        XCTAssertFalse(RunsLister.isEndOfARun(numbers: numbers, index: 8))
+        XCTAssertFalse(RunsLister.isEndOfARun(numbers: numbers, index: 9))
     }
 
     func testisStartOfARun() {
-        XCTAssertFalse(RunsLister.isStartOfARun([2], index: 0))
-        XCTAssertFalse(RunsLister.isStartOfARun([2, 2], index: 0))
-        XCTAssertFalse(RunsLister.isStartOfARun([2, 2], index: 1))
+        XCTAssertFalse(RunsLister.isStartOfARun(numbers: [2], index: 0))
+        XCTAssertFalse(RunsLister.isStartOfARun(numbers: [2, 2], index: 0))
+        XCTAssertFalse(RunsLister.isStartOfARun(numbers: [2, 2], index: 1))
 
-        XCTAssertTrue(RunsLister.isStartOfARun([3, 5], index: 0))
-        XCTAssertFalse(RunsLister.isStartOfARun([3, 5], index: 1))
+        XCTAssertTrue(RunsLister.isStartOfARun(numbers: [3, 5], index: 0))
+        XCTAssertFalse(RunsLister.isStartOfARun(numbers: [3, 5], index: 1))
 
         let numbers = [1, -7, 2, 1, 3, 48, 0, 0, 4, 12, 14]
-        XCTAssertTrue(RunsLister.isStartOfARun(numbers, index: 1))
-        XCTAssertTrue(RunsLister.isStartOfARun(numbers, index: 3))
-        XCTAssertTrue(RunsLister.isStartOfARun(numbers, index: 7))
-        XCTAssertFalse(RunsLister.isStartOfARun(numbers, index: 0))
-        XCTAssertFalse(RunsLister.isStartOfARun(numbers, index: 2))
-        XCTAssertFalse(RunsLister.isStartOfARun(numbers, index: 4))
-        XCTAssertFalse(RunsLister.isStartOfARun(numbers, index: 5))
-        XCTAssertFalse(RunsLister.isStartOfARun(numbers, index: 6))
-        XCTAssertFalse(RunsLister.isStartOfARun(numbers, index: 8))
-        XCTAssertFalse(RunsLister.isStartOfARun(numbers, index: 9))
-        XCTAssertFalse(RunsLister.isStartOfARun(numbers, index: 10))
+        XCTAssertTrue(RunsLister.isStartOfARun(numbers: numbers, index: 1))
+        XCTAssertTrue(RunsLister.isStartOfARun(numbers: numbers, index: 3))
+        XCTAssertTrue(RunsLister.isStartOfARun(numbers: numbers, index: 7))
+        XCTAssertFalse(RunsLister.isStartOfARun(numbers: numbers, index: 0))
+        XCTAssertFalse(RunsLister.isStartOfARun(numbers: numbers, index: 2))
+        XCTAssertFalse(RunsLister.isStartOfARun(numbers: numbers, index: 4))
+        XCTAssertFalse(RunsLister.isStartOfARun(numbers: numbers, index: 5))
+        XCTAssertFalse(RunsLister.isStartOfARun(numbers: numbers, index: 6))
+        XCTAssertFalse(RunsLister.isStartOfARun(numbers: numbers, index: 8))
+        XCTAssertFalse(RunsLister.isStartOfARun(numbers: numbers, index: 9))
+        XCTAssertFalse(RunsLister.isStartOfARun(numbers: numbers, index: 10))
     }
 
     // MARK: Test listRuns
@@ -74,7 +74,7 @@ class RunsListerTests: XCTestCase {
             Run(startIndex: 3, stopIndex: 5),
             Run(startIndex: 7, stopIndex: 10)]
         let expected = Runs(list: expectedRunList)
-        let actual = RunsLister.listRuns(numbers)
+        let actual = RunsLister.listRuns(numbers: numbers)
         XCTAssertEqual(expected, actual,
             "Expected \n \(expected.description) but got actual \n \(actual.description)")
     }
@@ -83,7 +83,7 @@ class RunsListerTests: XCTestCase {
         let numbers: [Int] = []
         let expectedRunList: [Run] = []
         let expected = Runs(list: expectedRunList)
-        let actual = RunsLister.listRuns(numbers)
+        let actual = RunsLister.listRuns(numbers: numbers)
         XCTAssertEqual(expected, actual,
             "Expected \n \(expected.description) but got actual \n \(actual.description)")
     }
@@ -92,7 +92,7 @@ class RunsListerTests: XCTestCase {
         let numbers: [Int] = [3]
         let expectedRunList: [Run] = []
         let expected = Runs(list: expectedRunList)
-        let actual = RunsLister.listRuns(numbers)
+        let actual = RunsLister.listRuns(numbers: numbers)
         XCTAssertEqual(expected, actual,
             "Expected \n \(expected.description) but got actual \n \(actual.description)")
     }
@@ -105,7 +105,7 @@ class RunsListerTests: XCTestCase {
             Run(startIndex: 3, stopIndex: 5),
             Run(startIndex: 7, stopIndex: 10)]
         let expected = Runs(list: expectedRunList)
-        let actual = RunsLister.listRuns2(numbers)
+        let actual = RunsLister.listRuns2(numbers: numbers)
         XCTAssertEqual(expected, actual,
             "Expected \n \(expected.description) but got actual \n \(actual.description)")
     }
@@ -114,7 +114,7 @@ class RunsListerTests: XCTestCase {
         let numbers: [Int] = []
         let expectedRunList: [Run] = []
         let expected = Runs(list: expectedRunList)
-        let actual = RunsLister.listRuns2(numbers)
+        let actual = RunsLister.listRuns2(numbers: numbers)
         XCTAssertEqual(expected, actual,
             "Expected \n \(expected.description) but got actual \n \(actual.description)")
     }
@@ -123,7 +123,7 @@ class RunsListerTests: XCTestCase {
         let numbers: [Int] = [3]
         let expectedRunList: [Run] = []
         let expected = Runs(list: expectedRunList)
-        let actual = RunsLister.listRuns2(numbers)
+        let actual = RunsLister.listRuns2(numbers: numbers)
         XCTAssertEqual(expected, actual,
             "Expected \n \(expected.description) but got actual \n \(actual.description)")
     }
@@ -132,7 +132,7 @@ class RunsListerTests: XCTestCase {
         let numbers: [Int] = [3, 3]
         let expectedRunList: [Run] = []
         let expected = Runs(list: expectedRunList)
-        let actual = RunsLister.listRuns2(numbers)
+        let actual = RunsLister.listRuns2(numbers: numbers)
         XCTAssertEqual(expected, actual,
             "Expected \n \(expected.description) but got actual \n \(actual.description)")
     }
@@ -141,7 +141,7 @@ class RunsListerTests: XCTestCase {
         let numbers: [Int] = [1, 3, 0]
         let expectedRunList = [Run(startIndex: 0, stopIndex: 1)]
         let expected = Runs(list: expectedRunList)
-        let actual = RunsLister.listRuns2(numbers)
+        let actual = RunsLister.listRuns2(numbers: numbers)
         XCTAssertEqual(expected, actual,
             "Expected \n \(expected.description) but got actual \n \(actual.description)")
     }
@@ -150,7 +150,7 @@ class RunsListerTests: XCTestCase {
         let numbers: [Int] = [2, 8, 42]
         let expectedRunList = [Run(startIndex: 0, stopIndex: 2)]
         let expected = Runs(list: expectedRunList)
-        let actual = RunsLister.listRuns2(numbers)
+        let actual = RunsLister.listRuns2(numbers: numbers)
         XCTAssertEqual(expected, actual,
             "Expected \n \(expected.description) but got actual \n \(actual.description)")
     }
@@ -159,7 +159,7 @@ class RunsListerTests: XCTestCase {
         let numbers: [Int] = [7, 3, 4]
         let expectedRunList = [Run(startIndex: 1, stopIndex: 2)]
         let expected = Runs(list: expectedRunList)
-        let actual = RunsLister.listRuns2(numbers)
+        let actual = RunsLister.listRuns2(numbers: numbers)
         XCTAssertEqual(expected, actual,
             "Expected \n \(expected.description) but got actual \n \(actual.description)")
     }

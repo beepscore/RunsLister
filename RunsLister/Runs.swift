@@ -13,7 +13,10 @@ import Foundation
 // i.e. can't do this- 
 // class Runs : [Run] {
 
-class Runs : Equatable, Printable, DebugPrintable {
+// iOS 9.0 API diffs
+// removed Printable, DebugPrintable
+// https://developer.apple.com/library/content/releasenotes/General/iOS90APIDiffs/Swift/Swift.html
+class Runs : Equatable {
     var list: [Run] = []
 
     init(list: [Run]) {
@@ -22,18 +25,17 @@ class Runs : Equatable, Printable, DebugPrintable {
 
     var description : String {
         var descriptionString = "["
-        
+
         for run in self.list {
             descriptionString += run.description
         }
         descriptionString += "]"
         return descriptionString
     }
-    
+
     var debugDescription : String {
         return self.description
     }
-
 }
 
 // function scope to compare two Runs must be outside class Runs

@@ -50,14 +50,17 @@ class RunsLister {
             return Runs(list: [])
         }
 
-        var runList: [Run] = []
-        var runs = Runs(list:runList)
+        let runList: [Run] = []
+        let runs = Runs(list:runList)
         var startIndex = 0
         var stopIndex = 0
 
-        // start at 1, 0 can't be end of a run
-        for (var index = 1; index < numbers.count; index++) {
-            if numbers[index] <= numbers[index-1] {
+        for (index, number) in numbers.enumerated() {
+
+            // skip 0, it can't be end of a run
+            if index == 0 { continue }
+
+            if number <= numbers[index-1] {
                 // we aren't in a run
                 stopIndex = index - 1
                 if (stopIndex > startIndex) {
@@ -85,16 +88,19 @@ class RunsLister {
     */
     class func listRuns2(numbers: [Int]) -> Runs {
 
-        var runList: [Run] = []
-        var runs = Runs(list:runList)
+        let runList: [Run] = []
+        let runs = Runs(list:runList)
         var startIndex = 0
 
-        // start at 1, 0 can't be end of a run
-        for (var index = 1; index < numbers.count; index++) {
-            if RunsLister.isStartOfARun(numbers, index: index) {
+        for (index, _) in numbers.enumerated() {
+
+            // skip 0, it can't be end of a run
+            if index == 0 { continue }
+
+            if RunsLister.isStartOfARun(numbers: numbers, index: index) {
                 startIndex = index
             }
-            if RunsLister.isEndOfARun(numbers, index: index) {
+            if RunsLister.isEndOfARun(numbers: numbers, index: index) {
                 runs.list.append(Run(startIndex: startIndex, stopIndex: index))
             }
         }

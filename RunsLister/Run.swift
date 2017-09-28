@@ -8,7 +8,10 @@
 
 import Foundation
 
-class Run : Equatable, Printable, DebugPrintable {
+// iOS 9.0 API diffs
+// removed Printable, DebugPrintable
+// https://developer.apple.com/library/content/releasenotes/General/iOS90APIDiffs/Swift/Swift.html
+class Run : Equatable {
 
     var startIndex: Int
     var stopIndex: Int

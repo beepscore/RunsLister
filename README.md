@@ -35,4 +35,22 @@ Given a list of integers sorted in increasing order, return the count of occurre
     f(4) returns 2
     f(5) returns 3
 
+### Strategies
+#### Dictionary
+Could traverse they entire list, building a dictionary.
+Then look for key in dictionary.
+The list could possibly be huge.
+This requires extra work, but makes subsequent calls fast.
+
+#### Binary search
+Could use binary search to find start of run, end of run.
+For start of run, check number and previous number or beginning of list.
+For end of run, check number and next number or end of list.
+Then run length = (end index - start index) + 1
+
+#### indexOf
+I think Python has an indexOf method that returns the index of the first matching element. Maybe Swift does too.
+To solve by writing very little code, could get startIndex via indexOf(number).
+Get endIndex by reversing array, endIndex ~ array.count - reversed.indexOf(number). TODO: Check for off by 1 errors!
+
 

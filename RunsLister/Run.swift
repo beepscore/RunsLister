@@ -8,9 +8,6 @@
 
 import Foundation
 
-// iOS 9.0 API diffs
-// removed Printable, DebugPrintable
-// https://developer.apple.com/library/content/releasenotes/General/iOS90APIDiffs/Swift/Swift.html
 class Run : Equatable {
 
     var startIndex: Int
@@ -20,7 +17,9 @@ class Run : Equatable {
         self.startIndex = startIndex
         self.stopIndex = stopIndex
     }
+}
 
+extension Run : CustomStringConvertible, CustomDebugStringConvertible {
     var description : String {
         return "startIndex: \(self.startIndex) stopIndex: \(self.stopIndex)\n"
     }
@@ -28,7 +27,6 @@ class Run : Equatable {
     var debugDescription : String {
         return self.description
     }
-
 }
 
 // function scope to compare two Run must be outside class Run

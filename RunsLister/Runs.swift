@@ -12,17 +12,15 @@ import Foundation
 // Swift class can't subclass array, because array is a struct, not a class.
 // i.e. can't do this- 
 // class Runs : [Run] {
-
-// iOS 9.0 API diffs
-// removed Printable, DebugPrintable
-// https://developer.apple.com/library/content/releasenotes/General/iOS90APIDiffs/Swift/Swift.html
 class Runs : Equatable {
     var list: [Run] = []
 
     init(list: [Run]) {
         self.list = list
     }
+}
 
+extension Runs : CustomStringConvertible, CustomDebugStringConvertible {
     var description : String {
         var descriptionString = "["
 

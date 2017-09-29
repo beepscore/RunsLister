@@ -71,4 +71,11 @@ class SortedListRunCounterTests: XCTestCase {
         XCTAssertEqual(SortedListRunCounter.runCountBinarySearch(intsSortedAscending: [], value: 4), 0)
     }
 
+    func testRunCountBinarySearchList1NotFound() {
+        XCTAssertEqual(SortedListRunCounter.runCountBinarySearch(intsSortedAscending: [3], value: 4), 0)
+    }
+
+    func testRunCountBinarySearchNotFound() {
+        XCTAssertEqual(SortedListRunCounter.runCountBinarySearch(intsSortedAscending: [1, 3, 5], value: 4), 0)
+    }
 }

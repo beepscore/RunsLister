@@ -38,12 +38,27 @@ class SortedListRunCounter {
 
     // MARK: runCountBinarySearch
 
+    /// Uses a binary search. This makes use of the fact that the list is sorted ascending.
+    ///
     /// - Parameters:
     ///   - intsSortedAscending: a list of integers sorted in increasing order
     ///   - value: the integer to search for
     /// - Returns: the count of occurrences of value. Returns 0 if not found.
     class func runCountBinarySearch(intsSortedAscending: [Int], value: Int) -> Int {
-        return 0
+
+        // edge case empty list
+        if intsSortedAscending.count == 0 {
+            return 0
+        }
+
+        guard let startIndex = runStartBinarySearch(intsSortedAscending: intsSortedAscending,
+                                                    value: value, range: 0...intsSortedAscending.count - 1),
+            let endIndex = runEndBinarySearch(intsSortedAscending: intsSortedAscending,
+                                              value: value, range: 0...intsSortedAscending.count - 1)
+            else {
+                return 0
+        }
+        return (endIndex - startIndex) + 1
     }
 
     /// Uses a binary search. This makes use of the fact that the list is sorted ascending.

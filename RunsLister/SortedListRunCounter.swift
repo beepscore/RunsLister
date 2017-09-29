@@ -10,7 +10,7 @@ import Foundation
 
 class SortedListRunCounter {
 
-    // MARK: runCount
+    // MARK: - runCount
 
     /// - Parameters:
     ///   - intsSortedAscending: a list of integers sorted in increasing order
@@ -36,7 +36,7 @@ class SortedListRunCounter {
         return (endIndex - startIndex) + 1
     }
 
-    // MARK: runCountBinarySearch
+    // MARK: - runCountBinarySearch
 
     /// Uses a binary search. This makes use of the fact that the list is sorted ascending.
     ///

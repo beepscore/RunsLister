@@ -54,6 +54,8 @@ Swift has similar index(of:).
 To solve by writing very little code, could get startIndex via index(of: number).
 Get endIndex by reversing array, endIndex ~ array.count - reversed.index(of: number).
 Note reversed() implementation may have been optimized, it might simply traverse backwards instead of rewriting.
-TODO: Check for off by 1 errors!
+
+### Tests
+For more info see SortedListRunCounter and SortedListRunCounterTests.
 
 

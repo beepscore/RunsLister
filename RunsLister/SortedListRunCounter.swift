@@ -23,7 +23,7 @@ class SortedListRunCounter {
 
         // reversed() is lazy, returns an 'ReversedRandomAccessIndex<[Int]>' iterator
         // that can't be used directly in integer arithmetic
-        // make a new array
+        // instantiate a new array
         let intsSortedDescending = Array(intsSortedAscending.reversed())
 
         guard let reversedStartIndex = intsSortedDescending.index(of: value) else {

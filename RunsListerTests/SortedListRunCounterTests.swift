@@ -147,4 +147,68 @@ class SortedListRunCounterTests: XCTestCase {
         XCTAssertEqual(SortedListRunCounter.runStartBinarySearch(intsSortedAscending: intsSortedAscending, value: 4, range: 0...intsSortedAscending.count - 1), 3)
         XCTAssertEqual(SortedListRunCounter.runStartBinarySearch(intsSortedAscending: intsSortedAscending, value: 5, range: 0...intsSortedAscending.count - 1), 5)
     }
+
+    // MARK: test runEndBinarySearch
+    
+    func testRunEndBinarySearchEmpty() {
+        XCTAssertEqual(SortedListRunCounter.runEndBinarySearch(intsSortedAscending: [], value: 4, range: 0...0), nil)
+    }
+
+    func testRunEndBinarySearchList1NotFound() {
+        let intsSortedAscending = [3]
+        XCTAssertEqual(SortedListRunCounter.runEndBinarySearch(intsSortedAscending: intsSortedAscending, value: 4, range: 0...intsSortedAscending.count - 1), nil)
+    }
+
+    func testRunEndBinarySearchListNotFound() {
+        let intsSortedAscending = [1, 3, 5]
+        XCTAssertEqual(SortedListRunCounter.runEndBinarySearch(intsSortedAscending: intsSortedAscending, value: 4, range: 0...intsSortedAscending.count - 1), nil)
+    }
+
+    func testRunEndList1() {
+        let intsSortedAscending = [3]
+        XCTAssertEqual(SortedListRunCounter.runEndBinarySearch(intsSortedAscending: intsSortedAscending, value: 3, range: 0...intsSortedAscending.count - 1), 0)
+    }
+
+    func testRunEnd1() {
+        let intsSortedAscending = [1, 3, 4, 5]
+        XCTAssertEqual(SortedListRunCounter.runEndBinarySearch(intsSortedAscending: intsSortedAscending, value: 4, range: 0...intsSortedAscending.count - 1), 2)
+    }
+
+    func testRunEndRunAtBeginning1() {
+        let intsSortedAscending = [2, 3, 4, 5]
+        XCTAssertEqual(SortedListRunCounter.runEndBinarySearch(intsSortedAscending: intsSortedAscending, value: 2, range: 0...intsSortedAscending.count - 1), 0)
+    }
+
+    func testRunEndRunAtBeginning() {
+        let intsSortedAscending = [2, 2, 2, 2, 3, 3, 4, 5]
+        XCTAssertEqual(SortedListRunCounter.runEndBinarySearch(intsSortedAscending: intsSortedAscending, value: 2, range: 0...intsSortedAscending.count - 1), 3)
+    }
+
+    func testRunEndRunAtEnd1() {
+        let intsSortedAscending = [2, 3, 8]
+        XCTAssertEqual(SortedListRunCounter.runEndBinarySearch(intsSortedAscending: intsSortedAscending, value: 8, range: 0...intsSortedAscending.count - 1), 2)
+    }
+
+    func testRunEndRunAtEnd() {
+        let intsSortedAscending = [2, 2, 2, 2, 3, 3, 4, 5, 5, 5]
+        XCTAssertEqual(SortedListRunCounter.runEndBinarySearch(intsSortedAscending: intsSortedAscending, value: 5, range: 0...intsSortedAscending.count - 1), 9)
+    }
+
+    func testRunEndRunInMiddle1() {
+        let intsSortedAscending = [2, 2, 2, 2, 3, 3, 4, 5, 5, 5]
+        XCTAssertEqual(SortedListRunCounter.runEndBinarySearch(intsSortedAscending: intsSortedAscending, value: 4, range: 0...intsSortedAscending.count - 1), 6)
+    }
+
+    func testRunEndRunInMiddle() {
+        let intsSortedAscending = [2, 2, 2, 2, 3, 3, 4, 5, 5, 5]
+        XCTAssertEqual(SortedListRunCounter.runEndBinarySearch(intsSortedAscending: intsSortedAscending, value: 3, range: 0...intsSortedAscending.count - 1), 5)
+    }
+
+    func testRunEndBinarySearchSpecificationExample() {
+        let intsSortedAscending = [1, 2, 3, 4, 4, 5, 5, 5, 8, 10]
+
+        XCTAssertEqual(SortedListRunCounter.runEndBinarySearch(intsSortedAscending: intsSortedAscending, value: 1, range: 0...intsSortedAscending.count - 1), 0)
+        XCTAssertEqual(SortedListRunCounter.runEndBinarySearch(intsSortedAscending: intsSortedAscending, value: 4, range: 0...intsSortedAscending.count - 1), 4)
+        XCTAssertEqual(SortedListRunCounter.runEndBinarySearch(intsSortedAscending: intsSortedAscending, value: 5, range: 0...intsSortedAscending.count - 1), 7)
+    }
 }

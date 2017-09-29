@@ -108,4 +108,67 @@ class SortedListRunCounter {
         // defensive programming, execution shouldn't get here
         return nil
     }
+
+    /// Uses a binary search. This makes use of the fact that the list is sorted ascending.
+    /// Probably more efficient than index(of:), which is built for general case unsorted.
+    ///
+    /// - Parameters:
+    ///   - intsSortedAscending: a list of integers sorted in increasing order
+    ///   - value: the integer to search for
+    ///   - range: the range to search, a sublist
+    /// - Returns: the index of the last occurence of the value in range. Returns None if not found
+    class func runEndBinarySearch(intsSortedAscending: [Int],
+                                    value: Int,
+                                    range: CountableClosedRange<Int>) -> Int? {
+
+        // edge case empty list
+        if intsSortedAscending.count == 0 {
+            return nil
+        }
+
+        if intsSortedAscending[range.lowerBound] > value || intsSortedAscending[range.upperBound] < value {
+            // value is not in range
+            return nil
+        }
+
+        if intsSortedAscending[range.upperBound] == value {
+            // runEnd is at range.upperBound or not in range
+            if range.upperBound == intsSortedAscending.endIndex - 1 {
+                // avoid out of range error don't check range.upperBound + 1
+                return intsSortedAscending.endIndex - 1
+            } else if intsSortedAscending[range.upperBound + 1] > value {
+                return range.upperBound
+            } else {
+                // runEnd is not in range
+                return nil
+            }
+        }
+
+        if intsSortedAscending[range.upperBound] > value {
+            // runEnd is within range or nil
+
+            // edge case if count is 2 don't try to get a subrange
+            if range.count == 2 {
+                if intsSortedAscending[range.lowerBound] == value {
+                    return range.lowerBound
+                } else {
+                    return nil
+                }
+            }
+
+            // choose a subrange and recurse
+            let midIndex = range.lowerBound + Int((range.upperBound - range.lowerBound) / 2)
+
+            if intsSortedAscending[midIndex] <= value {
+                // recurse on tail
+                return runEndBinarySearch(intsSortedAscending: intsSortedAscending, value: value, range: midIndex...range.upperBound)
+            } else {
+                // recurse on head
+                return runEndBinarySearch(intsSortedAscending: intsSortedAscending, value: value, range: range.lowerBound...midIndex)
+            }
+        }
+
+        // defensive programming, execution shouldn't get here
+        return nil
+    }
 }

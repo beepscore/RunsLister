@@ -46,4 +46,57 @@ class SortedListRunCounter {
         return 0
     }
 
+    /// Uses a binary search. This makes use of the fact that the list is sorted ascending.
+    /// Probably more efficient than index(of:), which is built for general case unsorted.
+    ///
+    /// - Parameters:
+    ///   - intsSortedAscending: a list of integers sorted in increasing order
+    ///   - value: the integer to search for
+    ///   - range: the range to search, a sublist
+    /// - Returns: the index of the first occurence of the value in range. Returns None if not found
+    class func runStartBinarySearch(intsSortedAscending: [Int],
+                                    value: Int,
+                                    range: CountableClosedRange<Int>) -> Int? {
+
+        // edge case empty list
+        if intsSortedAscending.count == 0 {
+            return nil
+        }
+
+        if intsSortedAscending[range.lowerBound] > value || intsSortedAscending[range.upperBound] < value {
+            // value is not in range
+            return nil
+        }
+
+        if intsSortedAscending[range.lowerBound] == value {
+            // runStart is at range.lowerBound or not in range
+            if range.lowerBound == 0 {
+                // avoid out of range error don't check range.lowerBound - 1
+                return 0
+            } else if intsSortedAscending[range.lowerBound - 1] < value {
+                return range.lowerBound
+            } else {
+                // runStart is not in range
+                return nil
+            }
+        }
+
+        if intsSortedAscending[range.lowerBound] < value {
+            // runStart is within range.
+
+            // choose a subrange and recurse
+            let midIndex = range.lowerBound + Int(range.lowerBound - range.lowerBound)
+
+            if intsSortedAscending[midIndex] >= value {
+                // recurse on head
+                return runStartBinarySearch(intsSortedAscending: intsSortedAscending, value: value, range: range.lowerBound...midIndex)
+            } else {
+                // recurse on tail
+                return runStartBinarySearch(intsSortedAscending: intsSortedAscending, value: value, range: midIndex...range.upperBound)
+            }
+        }
+
+        // defensive programming, execution shouldn't get here
+        return nil
+    }
 }

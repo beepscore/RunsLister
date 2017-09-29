@@ -26,4 +26,9 @@ class SortedListRunCounterTests: XCTestCase {
     func testRunCountRunAtBeginning1() {
         XCTAssertEqual(SortedListRunCounter.runCount(intsSortedAscending: [2, 3, 4, 5], value: 2), 1)
     }
+
+    func testRunCountRunAtEnd1() {
+        XCTAssertEqual(SortedListRunCounter.runCount(intsSortedAscending: [2, 3, 8], value: 8), 1)
+    }
+
 }

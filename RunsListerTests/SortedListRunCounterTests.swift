@@ -58,11 +58,11 @@ class SortedListRunCounterTests: XCTestCase {
     }
 
     func testRunCountSpecificationExample() {
-        let numbers = [1, 2, 3, 4, 4, 5, 5, 5, 8, 10]
+        let intsSortedAscending = [1, 2, 3, 4, 4, 5, 5, 5, 8, 10]
 
-        XCTAssertEqual(SortedListRunCounter.runCount(intsSortedAscending: numbers, value: 1), 1)
-        XCTAssertEqual(SortedListRunCounter.runCount(intsSortedAscending: numbers, value: 4), 2)
-        XCTAssertEqual(SortedListRunCounter.runCount(intsSortedAscending: numbers, value: 5), 3)
+        XCTAssertEqual(SortedListRunCounter.runCount(intsSortedAscending: intsSortedAscending, value: 1), 1)
+        XCTAssertEqual(SortedListRunCounter.runCount(intsSortedAscending: intsSortedAscending, value: 4), 2)
+        XCTAssertEqual(SortedListRunCounter.runCount(intsSortedAscending: intsSortedAscending, value: 5), 3)
     }
 
     // MARK: - test runCountBinarySearch
@@ -112,11 +112,11 @@ class SortedListRunCounterTests: XCTestCase {
     }
 
     func testRunCountBinarySearchSpecificationExample() {
-        let numbers = [1, 2, 3, 4, 4, 5, 5, 5, 8, 10]
+        let intsSortedAscending = [1, 2, 3, 4, 4, 5, 5, 5, 8, 10]
 
-        XCTAssertEqual(SortedListRunCounter.runCountBinarySearch(intsSortedAscending: numbers, value: 1), 1)
-        XCTAssertEqual(SortedListRunCounter.runCountBinarySearch(intsSortedAscending: numbers, value: 4), 2)
-        XCTAssertEqual(SortedListRunCounter.runCountBinarySearch(intsSortedAscending: numbers, value: 5), 3)
+        XCTAssertEqual(SortedListRunCounter.runCountBinarySearch(intsSortedAscending: intsSortedAscending, value: 1), 1)
+        XCTAssertEqual(SortedListRunCounter.runCountBinarySearch(intsSortedAscending: intsSortedAscending, value: 4), 2)
+        XCTAssertEqual(SortedListRunCounter.runCountBinarySearch(intsSortedAscending: intsSortedAscending, value: 5), 3)
     }
 
     // MARK: - test runStartBinarySearch

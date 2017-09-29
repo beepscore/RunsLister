@@ -10,6 +10,8 @@ import Foundation
 
 class SortedListRunCounter {
 
+    // MARK: runCount
+
     /// - Parameters:
     ///   - intsSortedAscending: a list of integers sorted in increasing order
     ///   - value: the integer to search for
@@ -32,6 +34,16 @@ class SortedListRunCounter {
 
         let endIndex = (intsSortedAscending.count - 1) - reversedStartIndex
         return (endIndex - startIndex) + 1
+    }
+
+    // MARK: runCountBinarySearch
+
+    /// - Parameters:
+    ///   - intsSortedAscending: a list of integers sorted in increasing order
+    ///   - value: the integer to search for
+    /// - Returns: the count of occurrences of value. Returns 0 if not found.
+    class func runCountBinarySearch(intsSortedAscending: [Int], value: Int) -> Int {
+        return 0
     }
 
 }

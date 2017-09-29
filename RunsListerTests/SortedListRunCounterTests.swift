@@ -11,6 +11,8 @@ import XCTest
 
 class SortedListRunCounterTests: XCTestCase {
 
+    // MARK: test runCount
+
     func testRunCountEmpty() {
         XCTAssertEqual(SortedListRunCounter.runCount(intsSortedAscending: [], value: 4), 0)
     }
@@ -62,4 +64,11 @@ class SortedListRunCounterTests: XCTestCase {
         XCTAssertEqual(SortedListRunCounter.runCount(intsSortedAscending: numbers, value: 4), 2)
         XCTAssertEqual(SortedListRunCounter.runCount(intsSortedAscending: numbers, value: 5), 3)
     }
+
+    // MARK: test runCountBinarySearch
+
+    func testRunCountBinarySearchEmpty() {
+        XCTAssertEqual(SortedListRunCounter.runCountBinarySearch(intsSortedAscending: [], value: 4), 0)
+    }
+
 }

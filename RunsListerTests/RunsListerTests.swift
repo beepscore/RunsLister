@@ -8,7 +8,7 @@
 
 import UIKit
 import XCTest
-//import RunsLister
+@testable import RunsLister
 
 class RunsListerTests: XCTestCase {
     

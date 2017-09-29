@@ -82,10 +82,19 @@ class SortedListRunCounter {
         }
 
         if intsSortedAscending[range.lowerBound] < value {
-            // runStart is within range.
+            // runStart is within range or nil
+
+            // edge case if count is 2 don't try to get a subrange
+            if range.count == 2 {
+                if intsSortedAscending[range.upperBound] == value {
+                    return range.upperBound
+                } else {
+                    return nil
+                }
+            }
 
             // choose a subrange and recurse
-            let midIndex = range.lowerBound + Int(range.lowerBound - range.lowerBound)
+            let midIndex = range.lowerBound + Int((range.upperBound - range.lowerBound) / 2)
 
             if intsSortedAscending[midIndex] >= value {
                 // recurse on head
